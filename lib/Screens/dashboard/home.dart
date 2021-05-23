@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vostur/Screens/book/book_details.dart';
 import 'package:vostur/constants.dart';
 import 'package:vostur/Screens/book/book_data.dart';
 import 'package:vostur/Screens/book/book_model.dart';
@@ -96,7 +97,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       BookSection(
-                        heading: "Continue Reading",
+                        heading: "Continue Listening",
                       ),
                       BookSection(
                         heading: "Discover More",
@@ -119,7 +120,7 @@ class BookSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Book> bookList;
-    if (heading == "Continue Reading") {
+    if (heading == "Continue Listening") {
       bookList = recentBooks;
     } else if (heading == "Discover More") {
       bookList = allBooks;
@@ -145,7 +146,15 @@ class BookSection extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.4,
             child: ListView.builder(
               itemBuilder: (ctx, i) => GestureDetector(
-                onTap: () {},
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (ctx) => BooksDetails(
+                      index: i,
+                      section: heading,
+                    ),
+                  ),
+                ),
                 child: Row(
                   children: [
                     Column(
