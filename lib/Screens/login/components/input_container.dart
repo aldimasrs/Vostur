@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:vostur/constants.dart';
 
 class InputContainer extends StatelessWidget {
-  const InputContainer({
+  InputContainer({
     Key key,
-    @required this.child,
+    this.child,
   }) : super(key: key);
 
   final Widget child;

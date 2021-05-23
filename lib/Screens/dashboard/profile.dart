@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vostur/Screens/login/login_auth.dart';
 import 'package:vostur/constants.dart';
 
 class HomeProfile extends StatelessWidget {
@@ -46,10 +47,15 @@ class HomeProfile extends StatelessWidget {
                     child: Column(
                       children: [
                         Container(
-                            child: Icon(
-                              Icons.settings,
-                              color: kTextColor,
-                              size: 36,
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.settings,
+                                color: kTextColor,
+                                size: 36,
+                              ),
+                              onPressed: () async {
+                                await AuthServices.signOut();
+                              },
                             ),
                             margin: EdgeInsets.only(
                               bottom: MediaQuery.of(context).size.height * 0.26,
