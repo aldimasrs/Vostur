@@ -79,7 +79,7 @@ class LoginForm extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 15),
                     alignment: Alignment.center,
                     child: Text(
-                      "SIGN UP",
+                      "LOG IN",
                       style: TextStyle(
                           color: Color(0xff422660),
                           fontSize: 18,
